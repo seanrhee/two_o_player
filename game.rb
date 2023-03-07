@@ -25,4 +25,16 @@ class Game
       game_over
     end
   end
+
+  def update_turn(turn)
+    if turn == 1
+      @turn = 2
+    else
+      @turn = 1
+    end
+    start
+  end
+
+  def start
+  end
 end
