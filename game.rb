@@ -8,14 +8,16 @@ class Game
   def game_over
     if @player1 == 0
       puts "Player 2 wins with a score of #{@player2}/3"
-    elsif @player2 = 0
+    elsif @player2 == 0
       puts "Player 1 wins with a score of #{@player1}/3"
     end
     puts "----- GAME OVER -----"
+    puts "Good bye!"
+    exit(0)
   end
 
   def update_lives(turn)
-    if turn == 1
+    if @turn == 1
       @player1 -= 1
     else
       @player2 -= 1
@@ -27,7 +29,7 @@ class Game
   end
 
   def update_turn(turn)
-    if turn == 1
+    if @turn == 1
       @turn = 2
     else
       @turn = 1
@@ -37,10 +39,10 @@ class Game
 
   def start
     puts "P1: #{@player1}/3 vs P2: #{@player2}/3"
-    question = Question.new(turn)
+    question = Question.new(@turn)
     if !question.start
-      update_lives(turn)
+      update_lives(@turn)
     end
-    update_turn(turn)
+    update_turn(@turn)
   end
 end
