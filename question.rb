@@ -10,7 +10,7 @@ class Question
     num2 = rand(1..10)
 
     puts "----- NEW TURN -----"
-    puts "Player #{turn}: What is #{num1} + #{num2}?"
+    puts "Player #{turn}: What does #{num1} + #{num2} equal?"
     print "> "
 
     answer = gets.chomp.to_i

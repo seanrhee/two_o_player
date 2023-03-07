@@ -36,5 +36,11 @@ class Game
   end
 
   def start
+    puts "P1: #{@player1}/3 vs P2: #{@player2}/3"
+    question = Question.new(turn)
+    if !question.start
+      update_lives(turn)
+    end
+    update_turn(turn)
   end
 end
